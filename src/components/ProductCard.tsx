@@ -1,6 +1,7 @@
 import { DessertsProps } from "../App";
 import { formatCurrency } from "../utils/formatCurrency";
-import { AddCartButton } from "./AddCartButton";
+import { AddToCartButton } from "./AddToCartButton";
+import { SelectedProductButton } from "./SelectedProductButton";
 
 interface ProductCardProps {
     product: DessertsProps;
@@ -34,11 +35,19 @@ export function ProductCard({
                         alt={product.name}
                     />
                 </picture>
-                <AddCartButton
-                    product={product}
-                    cartItems={cartItems}
-                    setCartItems={setCartItems}
-                />
+                {cartItems.some((item) => item.name === product.name) ? (
+                    <SelectedProductButton
+                        product={product}
+                        cartItems={cartItems}
+                        setCartItems={setCartItems}
+                    />
+                ) : (
+                    <AddToCartButton
+                        product={product}
+                        cartItems={cartItems}
+                        setCartItems={setCartItems}
+                    />
+                )}
             </div>
             <span className="text-pro-rose-500 text-sm">
                 {product.category}

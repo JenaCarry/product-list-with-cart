@@ -88,7 +88,7 @@ function App() {
                             ))}
                         </section>
                     </div>
-                    <section className="px-6 bg-white rounded-lg min-xl:mb-0 shadow-xs">
+                    <section className="px-6 bg-pro-rose-50 rounded-lg min-xl:mb-0 shadow-xs">
                         <Cart
                             cartItems={cartItems}
                             setCartItems={setCartItems}

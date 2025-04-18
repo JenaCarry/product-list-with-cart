@@ -1,7 +1,7 @@
 import { DessertsProps } from "../App";
 import { ProductCartProps } from "../components/ProductCard";
 
-export const handleAddCart = (
+export const addToCart = (
     cartItems: ProductCartProps[],
     product: DessertsProps
 ) => {
