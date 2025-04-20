@@ -1,8 +1,6 @@
-interface DecrementIconProps {
-    className?: string;
-}
+import { ClassNameProps } from "../../utils/classNameInterface";
 
-export function DecrementIcon({ className }: DecrementIconProps) {
+export function DecrementIcon({ className }: ClassNameProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

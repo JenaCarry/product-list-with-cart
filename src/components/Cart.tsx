@@ -1,14 +1,19 @@
+import { useState } from "react";
 import { calculateItemsTotal } from "../utils/calculateItemsTotal";
 import { formatCurrency } from "../utils/formatCurrency";
+import { RemoveItemIcon } from "./Icons/RemoveItemIcon";
 import { ProductCartProps } from "./ProductCard";
+import { OrderConfirmed } from "./OrderConfirmed";
 
-interface CartProps {
+export interface CartProps {
     cartItems: ProductCartProps[];
     orderTotal: number;
     setCartItems: (newCart: ProductCartProps[]) => void;
 }
 
 export function Cart({ cartItems, setCartItems, orderTotal }: CartProps) {
+    const [showModal, setShowModal] = useState<boolean>(false);
+
     const removeItemCart = (index: number) => {
         const updateCart: ProductCartProps[] = [...cartItems];
         updateCart.splice(index, 1);
@@ -17,21 +22,21 @@ export function Cart({ cartItems, setCartItems, orderTotal }: CartProps) {
 
     return (
         <>
-            <h3 className="text-xl font-bold text-pro-red my-5">
+            <h3 className="text-2xl font-bold text-pro-red my-5">
                 Your Cart ({calculateItemsTotal(cartItems)})
             </h3>
             {cartItems.length > 0 ? (
-                <div className="grid gap-5">
+                <div className="grid gap-5 text-sm">
                     <ul>
                         {cartItems.map((item, index) => (
                             <li key={index}>
                                 <div className="flex items-center justify-between">
-                                    <div className="grid">
-                                        <h4 className="font-semibold ">
+                                    <div className="grid gap-1">
+                                        <h4 className="font-semibold">
                                             {item.name}
                                         </h4>
                                         <div>
-                                            <p>
+                                            <p className="flex gap-2">
                                                 <span className="text-pro-red font-semibold">
                                                     {item.quantity}x
                                                 </span>{" "}
@@ -50,12 +55,9 @@ export function Cart({ cartItems, setCartItems, orderTotal }: CartProps) {
                                     </div>
                                     <button
                                         onClick={() => removeItemCart(index)}
-                                        className="w-5 h-5 border border-pro-rose-400 rounded-full grid place-content-center cursor-pointer transition-all hover:border-pro-rose-500"
+                                        className="w-5 h-5 border border-pro-rose-400 rounded-full grid place-content-center cursor-pointer group transition hover:border-pro-rose-500"
                                     >
-                                        <img
-                                            src="/assets/images/icon-remove-item.svg"
-                                            alt="Remove Item"
-                                        />
+                                        <RemoveItemIcon className="text-pro-rose-300 group-hover:text-pro-rose-400" />
                                     </button>
                                 </div>
                                 <hr className="border-pro-rose-100 my-4" />
@@ -64,7 +66,7 @@ export function Cart({ cartItems, setCartItems, orderTotal }: CartProps) {
                     </ul>
                     <h4 className="flex items-center justify-between">
                         Order Total{" "}
-                        <span className="font-bold text-xl">
+                        <span className="font-bold text-2xl">
                             {formatCurrency(orderTotal)}
                         </span>
                     </h4>
@@ -81,9 +83,20 @@ export function Cart({ cartItems, setCartItems, orderTotal }: CartProps) {
                             delivery
                         </p>
                     </div>
-                    <button className="w-full bg-pro-red text-white text-center px-5 py-2.5 rounded-3xl mb-5 cursor-pointer transition-all hover:bg-pro-red hover:brightness-90">
+                    <button
+                        onClick={() => setShowModal(true)}
+                        className="w-full bg-pro-red text-base text-white text-center px-5 py-2.5 rounded-3xl mb-5 cursor-pointer transition hover:bg-pro-red hover:brightness-90"
+                    >
                         Confirm Order
                     </button>
+                    {showModal && (
+                        <OrderConfirmed
+                            cartItems={cartItems}
+                            setCartItems={setCartItems}
+                            orderTotal={orderTotal}
+                            setShowModal={setShowModal}
+                        />
+                    )}
                 </div>
             ) : (
                 <div>

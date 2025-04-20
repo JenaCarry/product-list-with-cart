@@ -30,7 +30,13 @@ export function ProductCard({
                         srcSet={product.image.desktop}
                     />
                     <img
-                        className="rounded-lg shadow-xs"
+                        className={`rounded-lg shadow-xs ${
+                            cartItems.some(
+                                (item) => item.name === product.name
+                            ) === true
+                                ? "border-2 border-pro-red"
+                                : ""
+                        }`}
                         src={product.image.mobile}
                         alt={product.name}
                     />
