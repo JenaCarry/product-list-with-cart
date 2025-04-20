@@ -1,54 +1,112 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <img src="https://www.frontendmentor.io/static/images/logo-mobile.svg" alt="logo" width="60" height="auto">
 
-Currently, two official plugins are available:
+  <h2>Product list with cart
+</h2>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <h3>
+    <a href="update">
+      <strong>Frontend Mentor</strong>
+    </a>
+  </h3>
 
-## Expanding the ESLint configuration
+  <br>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  <div align="center">
+    <a href="https://product-list-with-cart-lyart.vercel.app/">View Demo</a>
+    -
+    <a href="https://github.com/JenaCarry/product-list-with-cart/issues">Report Bug</a>
+    -
+    <a href="https://github.com/JenaCarry/product-list-with-cart/pulls">Request Feature</a>
+  </div>
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+</div>
+
+#
+
+<div align="center">
+
+![](/public/assets/images/preview.jpg)
+
+</div>
+
+This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+<h2>Links</h2>
+
+-   Solution URL: [Product list with cart | Frontend Mentor](update)
+-   Live Site URL: [https://product-list-with-cart-lyart.vercel.app/](https://product-list-with-cart-lyart.vercel.app/)
+
+<br>
+
+## Table of contents
+
+- [](#)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Run the project](#run-the-project)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+-   Add items to the cart and remove them
+-   Increase/decrease the number of items in the cart
+-   See an order confirmation modal when they click "Confirm Order"
+-   Reset their selections when they click "Start New Order"
+-   View the optimal layout for the interface depending on their device's screen size
+-   See hover and focus states for all interactive elements on the page
+
+### Screenshot
+
+![](/public/assets/images/screenshot.png)
+
+## My process
+
+### Built with
+
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   CSS Grid
+-   Mobile-first workflow
+-   [React](https://reactjs.org/) - JS library
+-   [Vite](https://vite.dev/) - Build and Development
+-   [Tailwind CSS](https://tailwindcss.com/) - For styles
+-   [TypeScript](https://www.typescriptlang.org/) - Development
+
+## Useful resources
+
+-   [React](https://reactjs.org/)
+-   [Vite](https://vite.dev/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [TypeScript](https://www.typescriptlang.org/)
+
+## Author
+
+-   Frontend Mentor - [@JenaCarry](https://www.frontendmentor.io/profile/JenaCarry)
+-   LinkedIn - [Jean Dias](https://www.linkedin.com/in/jean-h-dias/)
+
+## Run the project
+
+To run the client, you need to run the following command:
+
+```bash
+npm install
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
