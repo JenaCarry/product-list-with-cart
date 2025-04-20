@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import "./App.css";
 import { ProductCard, ProductCartProps } from "./components/ProductCard";
 import { Cart } from "./components/Cart";
 import { Loading } from "./components/Loading";
@@ -78,6 +77,7 @@ function App() {
                     <div>
                         <h1 className="text-4xl font-bold mb-7">Desserts</h1>
                         <section className="grid gap-6 min-lg:grid-cols-[repeat(3,_minmax(0,_14rem))]">
+                            <h2 className="sr-only">dessert side</h2>
                             {data?.map((product, index) => (
                                 <ProductCard
                                     key={index}
