@@ -6,7 +6,7 @@
 </h2>
 
   <h3>
-    <a href="update">
+    <a href="https://www.frontendmentor.io/solutions/product-list-with-cart-EQp77aOfex">
       <strong>Frontend Mentor</strong>
     </a>
   </h3>
@@ -35,7 +35,7 @@ This is a solution to the [Product list with cart challenge on Frontend Mentor](
 
 <h2>Links</h2>
 
--   Solution URL: [Product list with cart | Frontend Mentor](update)
+-   Solution URL: [Product list with cart | Frontend Mentor](https://www.frontendmentor.io/solutions/product-list-with-cart-EQp77aOfex)
 -   Live Site URL: [https://product-list-with-cart-lyart.vercel.app/](https://product-list-with-cart-lyart.vercel.app/)
 
 <br>
