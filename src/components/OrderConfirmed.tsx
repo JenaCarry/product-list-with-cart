@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { formatCurrency } from "../utils/formatCurrency";
 import { OrderConfirmedIcon } from "./Icons/OrderConfirmedIcon";
 import { ProductCartProps } from "./ProductCard";
@@ -15,13 +16,24 @@ export function OrderConfirmed({
     orderTotal,
     setShowModal,
 }: OrderConfirmedProps) {
+    const modalRef = useRef<HTMLDivElement | null>(null);
     const generateNewOrder = () => {
         setCartItems([]);
         setShowModal(false);
     };
 
+    const handleModal = (event: React.MouseEvent<HTMLDivElement>) => {
+        if (modalRef.current && event.target === modalRef.current) {
+            setShowModal(false);
+        }
+    };
+
     return (
-        <div className="fixed inset-0 grid place-content-center grid-cols-[minmax(0,_32rem)] bg-black/40 p-2.5 z-50">
+        <div
+            onClick={handleModal}
+            ref={modalRef}
+            className="fixed inset-0 grid place-content-center grid-cols-[minmax(0,_32rem)] bg-black/40 p-2.5 z-50"
+        >
             <div className="w-full custom-scroll bg-white px-4 py-7 min-md:px-7 rounded-lg grid gap-5 min-md:gap-6 text-sm">
                 <OrderConfirmedIcon />
                 <div>
